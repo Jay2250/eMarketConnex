@@ -28,6 +28,9 @@ urlpatterns = [
     path('', include('core.urls')),
 
     # path('contact/', contact, name='contact'),
-    path('item/', include('item.urls')),
+    path('items/', include('item.urls')),
+
+    path('dashboard/', include('dashboard.urls')),
+    path('inbox/', include('conversation.urls')),
 
 ]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
