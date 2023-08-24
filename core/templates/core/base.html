@@ -15,11 +15,15 @@
             <a href="/" class="text-xl font-semibold"> eMrktConnex </a>
 
             <div class="space-x-6">
-                <a href="#" class="text-lg font-semibold hover:text-gray-500"> New Item </a>
+                <a href="{% url 'item:new' %}" class="text-lg font-semibold hover:text-gray-500"> New Item </a>
                 <a href="#" class="text-lg font-semibold hover:text-gray-500"> Browse </a>
-
-                <a href="#" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700"> Sign Up </a>
-                <a href="#" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700"> Log In </a>
+                {% if request.user.is_authenticated %}
+                <a href="#" class="px-6 py-3 text-lg font-semibold bg-gray-500  text-white rounded-xl hover:bg-teal-700"> Inbox </a>
+                <a href="#" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-gray-700"> Dashboard </a>
+                {% else %}
+                <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700"> Log In </a>
+                <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700"> Sign Up </a>
+                {% endif %}
             </div>
         </nav>
         <div class="px-6 py-6">
@@ -40,8 +44,8 @@
                 
                 <ul class="space-y-.5">
                     <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700" style="font-size:12px"> About </a></li>
-                    <li><a href="{% url 'contact' %}" class="text-lg text-teal-500 hover:text-teal-700" style="font-size:12px"> Contact </a></li>
                     <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700" style="font-size:12px"> Provacy Policy </a></li>
+                    <li><a href="{% url 'core:contact' %}" class="text-lg text-teal-500 hover:text-teal-700" style="font-size:12px"> Contact </a></li>
                     <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700" style="font-size:12px"> Terms of Uses </a></li>
                 </ul>
             
