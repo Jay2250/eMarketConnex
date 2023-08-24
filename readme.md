@@ -1,6 +1,6 @@
 # eMarketConnex
 
-Learn the basics of Django by building a simple online marketplace where people can buy and sell items. It is made with 
+With the basics of Django building a simple online marketplace where people can buy and sell items. It is made with 
 - Authentication
 
 ![image](image.png)
